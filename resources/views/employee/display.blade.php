@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        body{
+            background: url("../../images/17973908.jpg") !important;
+        }
+    </style>
+    @if(session()->has("success"))
+        <div class="alert alert-success">{{session()->get('success')}}</div>
+    @endif
+
+    @if(session()->has("error"))
+        <div class="alert alert-danger">{{session()->get('error')}}</div>
+    @endif
     <table class="table table-dark">
         <thead class="thead-light">
         <tr>
@@ -18,9 +30,9 @@
             <td>{{$employee->name}}</td>
             <td>{{$employee->age}}</td>
             <td>{{$employee->Country}}</td>
-            <td><a href="#" class="btn btn-primary">Edit</a>
+            <td><a href="{{route("employee.edit", $employee->id)}}" class="btn btn-primary">Edit</a>
                 &nbsp;
-                <a href="#" class="btn btn-danger">Delete</a></td>
+                <a href="{{route("employee.delete", $employee->id)}}" class="btn btn-danger">Delete</a></td>
         </tr>
         @endforeach
         </tbody>
@@ -29,6 +41,7 @@
         <div class="row">
             <div class="col text-center">
                 <a href="{{route("add.employee")}}" class="btn btn-default">Add User</a>
+
             </div>
         </div>
     </div>
