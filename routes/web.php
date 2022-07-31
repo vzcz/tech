@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\employee;
+use \App\Http\Controllers\employeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +32,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 ######Routes Employee
 Route::group(['prefix' => '/employee'], function (){
-    Route::get("/", [employee::class, 'showEmployee'])->name('employee.display');
-    Route::get("/Add", [employee::class, 'addEmployee'])->name('add.employee');
-    Route::post("/store", [employee::class, 'store'])->name("store.employee");
-//    Route::get("/edit/{employee_id}", [employee::class, 'edit'])->name('employee.edit');
+    Route::get("/", [employeeController::class, 'showEmployee'])->name('employee.display');
+    Route::get("/Add", [employeeController::class, 'addEmployee'])->name('add.employee');
+    Route::post("/store", [employeeController::class, 'store'])->name("store.employee");
+    Route::get("/edit/{id}",[employeeController::class, "edit"])->name("employee.edit");
+    Route::post("/update", [employeeController::class, "update"])->name("employee.update");
+    Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete");
 });
+
 
 ######End
