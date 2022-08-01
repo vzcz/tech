@@ -20,7 +20,10 @@
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Country</th>
+            @can("edit")
             <th>Operation</th>
+            @endcan
+
         </tr>
         </thead>
         <tbody>
@@ -30,13 +33,17 @@
             <td>{{$employee->name}}</td>
             <td>{{$employee->age}}</td>
             <td>{{$employee->Country}}</td>
+                @can("edit")
             <td><a href="{{route("employee.edit", $employee->id)}}" class="btn btn-primary">Edit</a>
-                &nbsp;
+                @endif
+                &nbsp;@can("delete")
                 <a href="{{route("employee.delete", $employee->id)}}" class="btn btn-danger">Delete</a></td>
+                @endcan
         </tr>
         @endforeach
         </tbody>
     </table>
+    @can("create")
     <div class="container">
         <div class="row">
             <div class="col text-center">
@@ -45,5 +52,6 @@
             </div>
         </div>
     </div>
+    @endcan
 
 @endsection

@@ -15,9 +15,10 @@ class employeeController extends Controller
 
     }
     ################## display all employees #################
-    public function showEmployee(){
-        $employees = Employee::select("id", "name", "age", "Country")->get();
-        return view("employee.display", compact('employees'));
+    public function showEmployee(user $user){
+            $employees = Employee::select("id", "name", "age", "Country")->get();
+            return view("employee.display", compact('employees'));
+
     }
     ############## Return form to add a new employee ###############
     public function addEmployee(){
@@ -26,11 +27,7 @@ class employeeController extends Controller
 
     ############## After click submit ###############
     public function store(employeeRequest $request){
-         Employee::create([
-           'name'=>$request->name,
-           'age'=>$request->age,
-           'country'=>$request->country
-        ]);
+         Employee::create($request->validated());
         return redirect()->back()->with(["success"=>"Saved successfully"]);
 
     }
