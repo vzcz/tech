@@ -8,6 +8,11 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    <div class="text-center">
+                    <img src="https://www.pngkey.com/png/full/392-3923865_vector-technology-png-images-blockstream-logo.png" width="100" height="100" alt=""><br>
+                        <h5 CLASS="text-info p-2 ">TECH</h5>
+                    </div>
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -53,7 +58,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-info">
                                     {{ __('Login') }}
                                 </button>
 

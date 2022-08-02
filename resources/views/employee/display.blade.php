@@ -13,8 +13,8 @@
     @if(session()->has("error"))
         <div class="alert alert-danger">{{session()->get('error')}}</div>
     @endif
-    <table class="table table-dark">
-        <thead class="thead-light">
+    <table class="table table-light table-striped">
+        <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>

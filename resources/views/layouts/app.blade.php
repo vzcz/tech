@@ -12,16 +12,32 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!--style-->
+    <style>
+        body{
+            background-image: url("https://i.ibb.co/yXNk4x1/17973908.jpg");
+            background-size: cover;
+        }
+        .navbar{
+            background: transparent !important;
+        }
+        .title-span{
+            font-size: 14px;
+        }
+    </style>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <div class="text-center">
+                        <img src="https://www.pngkey.com/png/full/392-3923865_vector-technology-png-images-blockstream-logo.png" width="30" height="30" alt="">
+                        <span CLASS="text-info p-1 title-span">TECH</span>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
