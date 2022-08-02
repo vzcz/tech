@@ -40,7 +40,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::post("/store", [employeeController::class, 'store'])->name("store.employee")->middleware(['can:create']);;
         Route::get("/edit/{id}",[employeeController::class, "edit"])->name("employee.edit")->middleware(['can:edit']);;
         Route::post("/update", [employeeController::class, "update"])->name("employee.update")->middleware(['can:edit']);;
-        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete")->middleware(['can:delte']);;
+        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete")->middleware(['can:delete']);;
     });
 
 ######End
