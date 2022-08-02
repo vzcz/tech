@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\employeeController;
 use \Spatie\Permission\Models\Permission;
@@ -41,7 +42,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::post("/update", [employeeController::class, "update"])->name("employee.update")->middleware(['can:edit']);;
         Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete")->middleware(['can:delte']);;
     });
-
 
 ######End
 
