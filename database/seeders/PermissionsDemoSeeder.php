@@ -20,24 +20,24 @@ class PermissionsDemoSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // create permissions
-        Permission::create(['name' => 'edit']);
-        Permission::create(['name' => 'delete']);
-        Permission::create(['name' => 'create']);
-        Permission::create(['name' => 'read']);
+        Permission::create(['name' => 'edit employee']);
+        Permission::create(['name' => 'delete employee']);
+        Permission::create(['name' => 'create employee']);
+        Permission::create(['name' => 'read employee']);
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'manager']);
-        $role1->givePermissionTo('edit');
-        $role1->givePermissionTo('read');
+        $role1->givePermissionTo('edit employee');
+        $role1->givePermissionTo('read employee');
 
         $role2 = Role::create(['name' => 'users']);
-        $role2->givePermissionTo('read');
+        $role2->givePermissionTo('read employee');
 
         $role3 = Role::create(['name' => 'admin']);
-        $role3->givePermissionTo('edit');
-        $role3->givePermissionTo('read');
-        $role3->givePermissionTo('create');
-        $role3->givePermissionTo('delete');
+        $role3->givePermissionTo('edit employee');
+        $role3->givePermissionTo('read employee');
+        $role3->givePermissionTo('create employee');
+        $role3->givePermissionTo('delete employee');
 
 
         // gets all permissions via Gate::before rule; see AuthServiceProvider

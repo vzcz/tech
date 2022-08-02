@@ -35,12 +35,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 ######Routes Employee
     Route::group(['prefix' => '/employee'], function (){
-        Route::get("/", [employeeController::class, 'showEmployee'])->name('employee.display')->middleware(['can:read']);;
-        Route::get("/Add", [employeeController::class, 'addEmployee'])->name('add.employee')->middleware(['can:create']);
-        Route::post("/store", [employeeController::class, 'store'])->name("store.employee")->middleware(['can:create']);;
-        Route::get("/edit/{id}",[employeeController::class, "edit"])->name("employee.edit")->middleware(['can:edit']);;
-        Route::post("/update", [employeeController::class, "update"])->name("employee.update")->middleware(['can:edit']);;
-        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete")->middleware(['can:delete']);;
+        Route::get("/", [employeeController::class, 'showEmployee'])->name('employee.display');
+        Route::get("/Add", [employeeController::class, 'addEmployee'])->name('add.employee');
+        Route::post("/store", [employeeController::class, 'store'])->name("store.employee");
+        Route::get("/edit/{id}",[employeeController::class, "edit"])->name("employee.edit");
+        Route::post("/update", [employeeController::class, "update"])->name("employee.update");
+        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete");;
     });
 
 ######End
