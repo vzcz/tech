@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Image</h5>
                             <img class="card-img-top" src="{{url($employee->name)}}" width="50" height="50" style="object-fit: cover;">
-                        <a href="{{url($employee->name)}}" class="btn btn-primary">View</a>
+                        <a href="{{url($employee->name)}}" class="btn btn-primary m-1">View</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <div>
                             <h5 class="card-title" >Document</h5>
                         </div>
-                        <a href="{{url($employee->name)}}" class="btn btn-primary">View</a>
+                        <a href="{{url($employee->name)}}" class="btn btn-primary mt-5">Download</a>
                     </div>
                 </div>
             </div>
