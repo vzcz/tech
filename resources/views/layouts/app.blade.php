@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" href="https://www.pngkey.com/png/full/392-3923865_vector-technology-png-images-blockstream-logo.png">
     <!--style-->
     <style>
         body{

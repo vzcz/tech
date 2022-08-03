@@ -12,4 +12,8 @@ class Employee extends Model
     protected $fillable = ["id", "name", "age", "country"];
     public $timestamps = false;
 
+    public function file(){
+        return $this->hasMany('App\Models\File', 'employee_id');
+    }
+
 }

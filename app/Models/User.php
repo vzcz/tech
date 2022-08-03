@@ -43,7 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function permission(){
-        return $this->belongsTo("App\Models\Permission", "permission_id");
-    }
 }

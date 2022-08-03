@@ -20,6 +20,7 @@
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Country</th>
+            <th scope="col">Files</th>
             @can("edit employee")
             <th>Operation</th>
             @endcan
@@ -33,7 +34,9 @@
             <td>{{$employee->name}}</td>
             <td>{{$employee->age}}</td>
             <td>{{$employee->Country}}</td>
-                @can("edit employee")
+            <td><a href="{{route("employee.files", $employee->id)}}" class="btn btn-info">Show files</a>
+
+        @can("edit employee")
             <td><a href="{{route("employee.edit", $employee->id)}}" class="btn btn-primary">Edit</a>
                 @endif
                 &nbsp;@can("delete employee")

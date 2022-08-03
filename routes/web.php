@@ -40,9 +40,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::post("/store", [employeeController::class, 'store'])->name("store.employee");
         Route::get("/edit/{id}",[employeeController::class, "edit"])->name("employee.edit");
         Route::post("/update", [employeeController::class, "update"])->name("employee.update");
-        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete");;
-    });
+        Route::get("/delete/{id}", [employeeController::class, "delete"])->name("employee.delete");
 
+        Route::get("/files/{id}", [employeeController::class, "files"])->name("employee.files");
+        Route::post("/store_file", [employeeController::class, "storeFile"])->name("employee.store.file");
+    });
 ######End
 
 
